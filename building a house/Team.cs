@@ -23,9 +23,9 @@ namespace building_a_house
             Finish finish = new Finish();   //закончили этап
             ICondition con = new Finish_Adapter(finish); // применяем адаптер (структурные паттерны)
             stages.Shot();  // делаем этап
-           /* basement.Stage(con);*/ // продолжаем строить 
+            basement.Stage(con); // продолжаем строить 
 
-            
+
             Stage_Caretaker stage_Caretaker = new Stage_Caretaker(); /*реализация паттера хранитель*/
             stage_Caretaker.History.Push(stages.Save());    // запоминаем результат
             stages.RestoreState(stage_Caretaker.History.Pop());
